@@ -43,6 +43,7 @@ C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\bin\Debug\net5.0\runtimes\win-x
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.csproj.AssemblyReference.cache
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.AssemblyInfoInputs.cache
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.AssemblyInfo.cs
@@ -58,4 +59,3 @@ C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.d
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\ref\Endpoint.Api.dll
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.pdb
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.genruntimeconfig.cache
-C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.csproj.AssemblyReference.cache
