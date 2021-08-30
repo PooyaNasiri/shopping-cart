@@ -58,3 +58,4 @@ C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.d
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\ref\Endpoint.Api.dll
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.pdb
 C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.genruntimeconfig.cache
+C:\Users\98990\Desktop\Shopping Cart\Endpint.Api\obj\Debug\net5.0\Endpoint.Api.csproj.AssemblyReference.cache

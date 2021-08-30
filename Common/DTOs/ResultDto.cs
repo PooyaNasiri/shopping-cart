@@ -5,6 +5,7 @@
         public string Message { get; set; }
         public bool Status { get; set; }
     }
+
     public class ResultDto<T>
     {
         public T Data { get; set; }
