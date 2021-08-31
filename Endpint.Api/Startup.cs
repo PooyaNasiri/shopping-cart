@@ -1,25 +1,18 @@
+using Application.Interfaces.Context;
+using Application.Services.CartItems.Commands.AddCartItem;
+using Application.Services.CartItems.Commands.RemoveCartItem;
+using Application.Services.Carts.Commands.AddCart;
+using Application.Services.Carts.Commands.RemoveCart;
+using Application.Services.Carts.Queries;
+using Application.Services.Carts.Queries.GetCartAndTotalPrice;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Persistence.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Application.Interfaces.Context;
-using Application.Services.Carts.Commands.AddCart;
-using Application.Services.CartItems.Commands.AddCartItem;
-using Application.Services.CartItems.Commands.RemoveCartItem;
-using Application.Services.Carts.Commands.RemoveCart;
-using Application.Services.Carts.Queries.GetCartAndTotalPrice;
-using Application.Services.Carts.Queries;
 
 namespace Endpint.Api
 {
@@ -47,7 +40,8 @@ namespace Endpint.Api
             services.AddScoped<IRemoveCartService, RemoveCartService>();
             services.AddScoped<IRemoveCartItemService, RemoveCartItemService>();
             services.AddScoped<IGetCartAndTotalPriceService, GetCartAndTotalPriceService>();
-         
+            services.AddScoped<IGetAllCarts, GetAllCarts>();
+
 
             services.AddSwaggerGen(c =>
             {
