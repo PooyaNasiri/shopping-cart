@@ -20,7 +20,7 @@ namespace Application.Services.CartItems.Commands.AddCartItem
 
         public ResultDto<Guid> Execute(AddCartItemDto addCartItemDto)
         {
-            var product=_context.Producs.Find(addCartItemDto.ProductId);
+            var product=_context.Products.Find(addCartItemDto.ProductId);
             if (product == null)
             {
                 return new ResultDto<Guid>()
@@ -43,11 +43,11 @@ namespace Application.Services.CartItems.Commands.AddCartItem
                 Id = Guid.NewGuid(),
                 IsRemove = false,
                 InsertTime = DateTime.Now,
-                Cart=cart,
+                Cart=cart, 
                 CartId=cart.Id,
                 Product=product,
                 ProductId=product.Id,
-                Number=addCartItemDto.Number
+           //     Number=addCartItemDto.Number
             };
             _context.CartItems.Add(cartItem);
             _context.SaveChanges();
@@ -63,6 +63,6 @@ namespace Application.Services.CartItems.Commands.AddCartItem
     {
         public Guid CartId { get; set; }
         public int ProductId { get; set; }
-        public long Number { get; set; }
+     //   public long Number { get; set; }
     }
 }

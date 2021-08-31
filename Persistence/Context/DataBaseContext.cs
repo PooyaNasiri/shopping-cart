@@ -11,7 +11,7 @@ namespace Persistence.Context
         public DataBaseContext(DbContextOptions<DataBaseContext> options):base(options)
         {
         }
-        public DbSet<Product> Producs { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,11 +22,11 @@ namespace Persistence.Context
 
             modelBuilder.Entity<Product>().HasData(new List<Product>()
             {
-                new Product(){Id=1, Name="A",Price=50,InsertTime=DateTime.Now,IsRemove=false},
-                new Product(){Id=2,Name="B",Price=30,InsertTime=DateTime.Now,IsRemove=false},
-                new Product(){Id=3,Name="C",Price=20,InsertTime=DateTime.Now,IsRemove=false},
-                new Product(){Id=4, Name="D",Price=15,InsertTime=DateTime.Now,IsRemove=false},
-            });   
+                new Product(){Id=1,Name="A",Price=50,DiscountPrice=130,DiscountQuorum=3,InsertTime=DateTime.Now,IsRemove=false},
+                new Product(){Id=2,Name="B",Price=30,DiscountPrice=45,DiscountQuorum=2,InsertTime=DateTime.Now,IsRemove=false},
+                new Product(){Id=3,Name="C",Price=20,DiscountPrice=20,DiscountQuorum=1,InsertTime=DateTime.Now,IsRemove=false},
+                new Product(){Id=4,Name="D",Price=15,DiscountPrice=15,DiscountQuorum=1,InsertTime=DateTime.Now,IsRemove=false},
+            });
         }
     }
 }

@@ -6,5 +6,7 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
         public long Price { get; set; }
+        public long DiscountQuorum { get; set; } 
+        public long DiscountPrice { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace Domain.Entities
 {
     public class CartItem: BaseEntity<Guid>
     {
-        public long Number { get; set; }
+      //  public long Number { get; set; }
         //-----Relations----Cart---------|
         public Guid CartId { get; set; }
         public Cart Cart { get; set; }

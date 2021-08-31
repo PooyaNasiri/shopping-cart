@@ -86,7 +86,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Producs");
+                    b.ToTable("Products");
 
                     b.HasData(
                         new
