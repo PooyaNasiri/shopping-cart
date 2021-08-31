@@ -1,11 +1,27 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Persistence.Context;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Application.Interfaces.Context;
+using Application.Services.Carts.Commands.AddCart;
+using Application.Services.CartItems.Commands.AddCartItem;
+using Application.Services.CartItems.Commands.RemoveCartItem;
+using Application.Services.Carts.Commands.RemoveCart;
+using Application.Services.Carts.Queries.GetCartAndTotalPrice;
+using Application.Services.Carts.Queries;
 
-namespace Endpoint.Api
+namespace Endpint.Api
 {
     public class Startup
     {
@@ -20,11 +36,22 @@ namespace Endpoint.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers(); 
+            services.AddControllers();
+            services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DbShoppingCart")));
+
+            services.AddTransient<IDataBaseContext, DataBaseContext>();
+
+            ///----------------Services
+            services.AddScoped<IAddCartService, AddCartService>();
+            services.AddScoped<IAddCartItemService, AddCartItemService>();
+            services.AddScoped<IRemoveCartService, RemoveCartService>();
+            services.AddScoped<IRemoveCartItemService, RemoveCartItemService>();
+            services.AddScoped<IGetCartAndTotalPriceService, GetCartAndTotalPriceService>();
+         
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Endpoint.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Endpint.Api", Version = "v1" });
             });
         }
 
@@ -35,7 +62,7 @@ namespace Endpoint.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Endpoint.Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Endpint.Api v1"));
             }
 
             app.UseHttpsRedirection();
