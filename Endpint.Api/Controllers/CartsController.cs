@@ -32,7 +32,7 @@ namespace Endpint.Api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("getAllCarts")]
         public IActionResult GetAll()
         {
             var result = _getAllCart.Execute();

@@ -21,7 +21,7 @@ namespace Endpint.Api.Controllers
         [HttpPost]
         public IActionResult Post(AddCartItemDto addCartItem)
         {
-            var result=_addCartItem.Execute(addCartItem);
+            var result = _addCartItem.Execute(addCartItem);
             return Ok(result);
         }
         [HttpDelete("{CartItemId}")]

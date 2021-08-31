@@ -61,7 +61,6 @@ namespace Application.Services.Carts.Queries.GetCartAndTotalPrice
         public Guid CartId { get; set; }
         public DateTime InsertTime { get; set; }
         public long TotalPrice { get; set; }
-
         public List<CartItemDto> Items { get; set; }
     }
 
