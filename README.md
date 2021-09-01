@@ -16,7 +16,7 @@
 Usage:
 it can be both run with Swagger and Docker:
 
-![alt text](swagger.PNG)
+![alt text](/swagger.PNG)
 
 * Website: https://gitlab.com/pooya.nasiri75
 * Twitter: [@pooyanasiri](https://twitter.com/pooyanasiri)
