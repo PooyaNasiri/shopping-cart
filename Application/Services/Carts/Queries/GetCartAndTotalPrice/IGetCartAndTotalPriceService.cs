@@ -45,18 +45,18 @@ namespace Application.Services.Carts.Queries.GetCartAndTotalPrice
                 }).ToList();
 
             long _totalPrice = 0;
-            int product_count = _context.Products.Count();
-            int[] product_count_in_cart = new int[product_count];
             var products = _context.Products.ToList();
+            int prodcutsCount = products.Count;
+            int[] productsCountInCart = new int[prodcutsCount];
 
-            for (int i = 0; i < product_count; i++)
+            for (int i = 0; i < prodcutsCount; i++)
             {
-                product_count_in_cart[i] = 0;
+                productsCountInCart[i] = 0;
                 for (int j = 0; j < cartItem.Count; j++)
                     if (products[i].Name == cartItem[j].ProductName)
-                       product_count_in_cart[i]++; 
-                _totalPrice += ((product_count_in_cart[i] / products[i].DiscountQuorum) * products[i].DiscountPrice) 
-                             + ((product_count_in_cart[i] % products[i].DiscountQuorum) * products[i].Price);
+                       productsCountInCart[i]++; 
+                _totalPrice += ((productsCountInCart[i] / products[i].DiscountQuorum) * products[i].DiscountPrice) 
+                             + ((productsCountInCart[i] % products[i].DiscountQuorum) * products[i].Price);
             }
              
 
